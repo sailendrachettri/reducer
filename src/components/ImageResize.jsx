@@ -69,6 +69,7 @@ const ImageResize = () => {
                     <select value={imageType} onChange={(ev) => setImageType(ev.target.value)}>
                         <option value="PNG">PNG</option>
                         <option value="JPEG">JPEG</option>
+                        <option value="WEBP">WEBP</option>
                     </select>
                 </div>
                 <button type='submit'>{loading}</button>

@@ -1,9 +1,14 @@
 import './App.css';
-import Resizer from './components/Resizer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ImageResize from './components/ImageResize';
 
 function App() {
   return (
-    <Resizer />
+    <>
+      <ToastContainer />
+      <ImageResize />
+    </>
   );
 }
 

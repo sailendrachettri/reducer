@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Resizer from 'react-image-file-resizer'
 
 const ImageResize = () => {
@@ -8,13 +11,14 @@ const ImageResize = () => {
     const [quality, setQuality] = useState(50);
     const [isUploaded, setisUploaded] = useState(false);
     const [loading, setLoading] = useState("Resize")
+    const [imageType, setImageType] = useState("JPEG");
 
     const resizeFile = (file) => {
         Resizer.imageFileResizer(
             file,
             500, // new image max width
             500, // new image max height
-            'JPEG', // default type
+            imageType, // default image type
             quality, // new image quality
             0, // rotation degree
             (uri) => {
@@ -34,14 +38,17 @@ const ImageResize = () => {
             setisUploaded(false);
             resizeFile(upload)
             setQuality(quality);
+            setImageType(imageType);
 
             setTimeout(() => {
                 setisUploaded(true);
                 setLoading("Resize")
+                toast.success("Compressed successfully!")
             }, 1000);
+
         }
         else {
-            alert("Please upload an image");
+            toast.error("Please upload an image");
             setLoading("Resize");
         }
     }
@@ -50,12 +57,19 @@ const ImageResize = () => {
     return (
         <div className='container'>
             <form onSubmit={handleFileResize}>
-            <h3>Compress your image file in seconds</h3>
+                <h3>Compress your image file in seconds</h3>
                 <label htmlFor='upload-file'>Upload Image</label>
-                <input type="file" id='upload-file' onChange={(event) => setUpload(event.target.files[0])} />
+                <input type="file" id='upload-file' onClick={()=> setisUploaded(false)} onChange={(event) => setUpload(event.target.files[0])} />
 
-                <div>
-                    <input type="number" className='quality' min={10} max={100} value={quality} onChange={(ev) => setQuality(ev.target.value)} /> <span>%</span>
+                <div className='quality'>
+                    <div>
+                        <input type="number" min={10} max={100} value={quality} onChange={(ev) => setQuality(ev.target.value)} />
+                        <span>%</span>
+                    </div>
+                    <select value={imageType} onChange={(ev) => setImageType(ev.target.value)}>
+                        <option value="PNG">PNG</option>
+                        <option value="JPEG">JPEG</option>
+                    </select>
                 </div>
                 <button type='submit'>{loading}</button>
             </form>
@@ -63,9 +77,9 @@ const ImageResize = () => {
 
             {isUploaded &&
                 <div className='complected'>
-                    <p>Image compressed successfully!</p>
-                    <img src={newImage} alt="Resized file" className='preview' />
                     <a download="compressed_file" href={newImage}>
+                    <p>Download your compressed image file :)</p>
+                    <img src={newImage} alt="Resized file" className='preview' />
                         <button className='download'>Download</button>
                     </a>
 

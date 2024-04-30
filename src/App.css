@@ -1,27 +1,33 @@
-:root{
-  --border-color:  #237fdb;
+:root {
+  --border-color: #237fdb;
+  --bg-color:  rgb(229, 230, 231);
 }
 
 body {
-  background-color: rgb(229, 230, 231);
+  background-color: var(--bg-color);
+  min-height: 90vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a{
+a {
   text-decoration: none;
 }
+
 
 .container {
   display: flex;
   flex-direction: column;
   width: fit-content;
   border: 1px solid var(--border-color);
-  margin: auto;
-  margin-top: 10%;
+  justify-content: center;
   padding: 1rem;
   border-radius: 5px;
 }
 
-form h3{
+form h3 {
   color: var(--border-color);
 }
 
@@ -30,11 +36,11 @@ form h3{
   width: fit-content;
 }
 
-input[type="file"]{
+input[type="file"] {
   display: none;
 }
 
-label{
+label {
   font-size: 1rem;
   border: 1px solid var(--border-color);
   padding: 5px;
@@ -45,7 +51,7 @@ label{
   background-color: #237fdb7a;
 }
 
-.preview{
+.preview {
   height: 50px;
   width: 50px;
   margin-top: 10px;
@@ -53,12 +59,12 @@ label{
   border-radius: 3px;
 }
 
-.container p{
+.container p {
   margin-bottom: 1rem;
   margin-top: 12px;
 }
 
-button[type="submit"]{
+button[type="submit"] {
   width: 100%;
   font-size: 1rem;
 }
@@ -71,11 +77,11 @@ button[type="submit"]{
 
 }
 
-.quality input{
+.quality input {
   margin: 0;
 }
 
-.quality span{
+.quality span {
   margin-left: 5px;
 }
 
@@ -87,17 +93,42 @@ button {
   color: #237fdb;
 }
 
-.complected{
+.complected {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.complected a, .complected .download{
+.complected a,
+.complected .download {
   width: 100%;
 }
 
-.complected p{
+.complected p {
   color: rgb(55, 182, 55);
 }
+
+/*----------------------------FOOTER CSS STARTED---------------------------- */
+footer {
+  width: 100%;
+  text-align: center;
+  color:  rgba(84, 99, 122, 0.61);
+}
+
+footer a{
+  color:  rgba(109, 141, 189, 0.801);
+  font-weight: bold;
+}
+
+.footer-section {
+  margin: 2rem 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.copyright{
+  margin-top: 10px;
+}
+
+/*----------------------------FOOTER CSS ENDED---------------------------- */

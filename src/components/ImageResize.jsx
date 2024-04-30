@@ -75,7 +75,10 @@ const ImageResize = () => {
                         <option value="WEBP">WEBP</option>
                     </select>
                 </div>
-                <button type='submit'>{loading}</button>
+                <div className='resize-btn'>
+                    <span class="material-symbols-outlined">low_density</span>
+                    <button type='submit'>{loading}</button>
+                </div>
             </form>
 
 
@@ -84,7 +87,10 @@ const ImageResize = () => {
                     <a download="compressed_file" href={newImage}>
                         <p>Download your compressed image file :)</p>
                         <img src={newImage} alt="Resized file" className='preview' />
-                        <button className='download'>Download</button>
+                        <button className='download'>
+                            <span class="material-symbols-outlined">download</span>
+                            <span>Download</span>
+                        </button>
                     </a>
 
                 </div>

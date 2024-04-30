@@ -1,7 +1,9 @@
 :root {
   --border-color: #237fdb;
   --bg-color: #33679b;
+  --bg-color-light: whitesmoke;
   --text-light: whitesmoke;
+  --text-dark: #237fdb;
 }
 
 body {
@@ -52,7 +54,7 @@ label {
   margin: 1rem 0;
   cursor: pointer;
   color: var(--border-color);
-  background-color: var(--text-light);
+  background-color: var(--bg-color-light);
 }
 
 label p{
@@ -70,11 +72,6 @@ label p{
 .container p {
   margin-bottom: 1rem;
   margin-top: 12px;
-}
-
-button[type="submit"] {
-  width: 100%;
-  font-size: 1rem;
 }
 
 .quality {
@@ -110,10 +107,20 @@ button[type="submit"] {
   color: var(--text-light);
 }
 
+.resize-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color-light);
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--text-dark);
+}
+
 button {
   padding: 5px;
   cursor: pointer;
-  border: 1px solid whitesmoke;
+  border: 1px solid var(--bg-color-light);
   border-radius: 5px;
   color: #237fdb;
 }
@@ -125,8 +132,14 @@ button {
   flex-direction: column;
 }
 
-.complected a,
+.complected a{
+  width: 100%;
+}
+
 .complected .download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 

@@ -1,6 +1,7 @@
 :root {
   --border-color: #237fdb;
-  --bg-color:  rgb(229, 230, 231);
+  --bg-color: #33679b;
+  --text-light: whitesmoke;
 }
 
 body {
@@ -28,7 +29,7 @@ a {
 }
 
 form h3 {
-  color: var(--border-color);
+  color: var(--text-light);
 }
 
 .container input {
@@ -43,12 +44,18 @@ input[type="file"] {
 label {
   font-size: 1rem;
   border: 1px solid var(--border-color);
-  padding: 5px;
+  padding-left: 10px;
   border-radius: 5px;
-  display: block;
+  display: flex;
+  align-items: center;
   margin: 1rem 0;
   cursor: pointer;
-  background-color: #237fdb7a;
+  color: var(--border-color);
+  background-color: var(--text-light);
+}
+
+label p{
+  margin-left: 7px;
 }
 
 .preview {
@@ -77,12 +84,29 @@ button[type="submit"] {
 
 }
 
+.quality select {
+  border-radius: 5px;
+  color: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  outline: none;
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
 .quality input {
   margin: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  padding: 5px;
+  color: var(--border-color);
+  font-weight: bold;
 }
 
 .quality span {
   margin-left: 5px;
+  color: var(--text-light);
 }
 
 button {
@@ -106,20 +130,21 @@ button {
 }
 
 .complected p {
-  color: rgb(55, 182, 55);
+  color: var(--text-light);
 }
 
 /*----------------------------FOOTER CSS STARTED---------------------------- */
 footer {
   width: 100%;
   text-align: center;
-  color:  rgba(84, 99, 122, 0.61);
+  color: var(--text-light);
   display: flex;
-  justify-content: center !important;
+  justify-content: center;
+  opacity: 0.7;
 }
 
-footer a{
-  color:  rgba(109, 141, 189, 0.801);
+footer a {
+  color: var(--text-light);
   font-weight: bold;
 }
 
@@ -129,7 +154,7 @@ footer a{
   bottom: 0;
 }
 
-.copyright{
+.copyright {
   margin-top: 10px;
 }
 

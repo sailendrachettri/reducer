@@ -58,8 +58,11 @@ const ImageResize = () => {
         <div className='container'>
             <form onSubmit={handleFileResize}>
                 <h3>Compress your image file in seconds</h3>
-                <label htmlFor='upload-file'>Upload Image</label>
-                <input type="file" id='upload-file' onClick={()=> setisUploaded(false)} onChange={(event) => setUpload(event.target.files[0])} />
+                <label htmlFor='upload-file'>
+                    <span class="material-symbols-outlined"> add_photo_alternate  </span>
+                    <p> upload your image here</p>
+                </label>
+                <input type="file" id='upload-file' onClick={() => setisUploaded(false)} onChange={(event) => setUpload(event.target.files[0])} />
 
                 <div className='quality'>
                     <div>
@@ -79,8 +82,8 @@ const ImageResize = () => {
             {isUploaded &&
                 <div className='complected'>
                     <a download="compressed_file" href={newImage}>
-                    <p>Download your compressed image file :)</p>
-                    <img src={newImage} alt="Resized file" className='preview' />
+                        <p>Download your compressed image file :)</p>
+                        <img src={newImage} alt="Resized file" className='preview' />
                         <button className='download'>Download</button>
                     </a>
 

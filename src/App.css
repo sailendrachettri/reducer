@@ -114,6 +114,8 @@ footer {
   width: 100%;
   text-align: center;
   color:  rgba(84, 99, 122, 0.61);
+  display: flex;
+  justify-content: center !important;
 }
 
 footer a{

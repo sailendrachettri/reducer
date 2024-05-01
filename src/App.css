@@ -1,5 +1,6 @@
 :root {
   --border-color: #237fdb;
+  --border-light: whitesmoke;
   --bg-color: #33679b;
   --bg-color-light: whitesmoke;
   --text-light: whitesmoke;
@@ -24,7 +25,8 @@ a {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
+  box-shadow: 2px 2px 2px var(--border-light);
   justify-content: center;
   padding: 1.5rem;
   border-radius: 5px;

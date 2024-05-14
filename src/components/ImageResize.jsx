@@ -12,8 +12,12 @@ const ImageResize = () => {
     const [isUploaded, setisUploaded] = useState(false);
     const [loading, setLoading] = useState("Resize")
     const [imageType, setImageType] = useState("JPEG");
+    const [filename, setFileName] = useState("");
 
     const resizeFile = (file) => {
+
+        setFileName(file.name)
+
         Resizer.imageFileResizer(
             file,
             500, // new image max width
@@ -59,7 +63,7 @@ const ImageResize = () => {
             <form onSubmit={handleFileResize}>
                 <h3>Compress your image file in seconds</h3>
                 <label htmlFor='upload-file'>
-                    <span class="material-symbols-outlined"> add_photo_alternate  </span>
+                    <span className="material-symbols-outlined"> add_photo_alternate  </span>
                     <p> upload your image here</p>
                 </label>
                 <input type="file" id='upload-file' onClick={() => setisUploaded(false)} onChange={(event) => setUpload(event.target.files[0])} />
@@ -76,7 +80,7 @@ const ImageResize = () => {
                     </select>
                 </div>
                 <div className='resize-btn'>
-                    <span class="material-symbols-outlined">low_density</span>
+                    <span className="material-symbols-outlined">low_density</span>
                     <button type='submit'>{loading}</button>
                 </div>
             </form>
@@ -84,11 +88,11 @@ const ImageResize = () => {
 
             {isUploaded &&
                 <div className='complected'>
-                    <a download="compressed_file" href={newImage}>
+                    <a download={`compressed_${filename}`} href={newImage}>
                         <p>Download your compressed image file :)</p>
                         <img src={newImage} alt="Resized file" className='preview' />
                         <button className='download'>
-                            <span class="material-symbols-outlined">download</span>
+                            <span className="material-symbols-outlined">download</span>
                             <span>Download</span>
                         </button>
                     </a>

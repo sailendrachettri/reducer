@@ -12,7 +12,7 @@ const ImageResize = () => {
     const [isUploaded, setisUploaded] = useState(false);
     const [loading, setLoading] = useState("Resize")
     const [imageType, setImageType] = useState("JPEG");
-    const [filename, setFileName] = useState("");
+    const [filename, setFileName] = useState(null);
 
     const resizeFile = (file) => {
 
@@ -64,9 +64,16 @@ const ImageResize = () => {
                 <h3>Compress your image file in seconds</h3>
                 <label htmlFor='upload-file'>
                     <span className="material-symbols-outlined"> add_photo_alternate  </span>
-                    <p> upload your image here</p>
+                    <p> {filename ? filename : "upload your image here"}</p>
                 </label>
-                <input type="file" id='upload-file' onClick={() => setisUploaded(false)} onChange={(event) => setUpload(event.target.files[0])} />
+                <input type="file" id='upload-file'
+                    onClick={() => setisUploaded(false)}
+                    onChange={(event) => {
+                        setUpload(event.target.files[0])
+                        setFileName(event.target.files[0].name)
+                    }
+                    }
+                />
 
                 <div className='quality'>
                     <div>

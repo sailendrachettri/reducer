@@ -59,53 +59,55 @@ const ImageResize = () => {
 
 
     return (
-        <div className='container'>
-            <form onSubmit={handleFileResize}>
-                <h3>Compress your image file in seconds</h3>
-                <label htmlFor='upload-file'>
-                    <span className="material-symbols-outlined"> add_photo_alternate  </span>
-                    <p> {filename ? filename : "upload your image here"}</p>
-                </label>
-                <input type="file" id='upload-file'
-                    onClick={() => setisUploaded(false)}
-                    onChange={(event) => {
-                        setUpload(event.target.files[0])
-                        setFileName(event.target.files[0].name)
-                    }
-                    }
-                />
+        <div className='reducer'>
+            <div className='container'>
+                <form onSubmit={handleFileResize}>
+                    <h3>Compress your image file in seconds</h3>
+                    <label htmlFor='upload-file'>
+                        <span className="material-symbols-outlined"> add_photo_alternate  </span>
+                        <p> {filename ? filename : "upload your image here"}</p>
+                    </label>
+                    <input type="file" id='upload-file'
+                        onClick={() => setisUploaded(false)}
+                        onChange={(event) => {
+                            setUpload(event.target.files[0])
+                            setFileName(event.target.files[0].name)
+                        }
+                        }
+                    />
 
-                <div className='quality'>
-                    <div>
-                        <input type="number" min={10} max={100} value={quality} onChange={(ev) => setQuality(ev.target.value)} />
-                        <span>%</span>
+                    <div className='quality'>
+                        <div>
+                            <input type="number" min={10} max={100} value={quality} onChange={(ev) => setQuality(ev.target.value)} />
+                            <span>%</span>
+                        </div>
+                        <select value={imageType} onChange={(ev) => setImageType(ev.target.value)}>
+                            <option value="PNG">PNG</option>
+                            <option value="JPEG">JPEG</option>
+                            <option value="WEBP">WEBP</option>
+                        </select>
                     </div>
-                    <select value={imageType} onChange={(ev) => setImageType(ev.target.value)}>
-                        <option value="PNG">PNG</option>
-                        <option value="JPEG">JPEG</option>
-                        <option value="WEBP">WEBP</option>
-                    </select>
-                </div>
-                <div className='resize-btn'>
-                    <span className="material-symbols-outlined">low_density</span>
-                    <button type='submit'>{loading}</button>
-                </div>
-            </form>
+                    <div className='resize-btn'>
+                        <span className="material-symbols-outlined">low_density</span>
+                        <button type='submit'>{loading}</button>
+                    </div>
+                </form>
 
 
-            {isUploaded &&
-                <div className='complected'>
-                    <a download={`compressed_${filename}`} href={newImage}>
-                        <p>Download your compressed image file :)</p>
-                        <img src={newImage} alt="Resized file" className='preview' />
-                        <button className='download'>
-                            <span className="material-symbols-outlined">download</span>
-                            <span>Download</span>
-                        </button>
-                    </a>
+                {isUploaded &&
+                    <div className='complected'>
+                        <a download={`compressed_${filename}`} href={newImage}>
+                            <p>Download your compressed image file :)</p>
+                            <img src={newImage} alt="Resized file" className='preview' />
+                            <button className='download'>
+                                <span className="material-symbols-outlined">download</span>
+                                <span>Download</span>
+                            </button>
+                        </a>
 
-                </div>
-            }
+                    </div>
+                }
+            </div>
         </div>
     )
 }

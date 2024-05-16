@@ -1,6 +1,7 @@
 :root {
   --border-color: #237fdb;
   --border-light: whitesmoke;
+  --tool-box-color: #eef1f1;
   --bg-color: #33679b;
   --bg-color-light: whitesmoke;
   --text-light: whitesmoke;
@@ -21,9 +22,13 @@ h1, h2, h2{
 
 /* --------------------------------CONVERTER OPTIONS PAGE STYLES-------------------------------- */
 .converter{
-  margin: 5rem 0.5rem;
+  margin: 5rem;
   text-align: center;
+}
 
+.converter h1{
+  font-size: 2.2rem;
+  margin: 2rem 0;
 }
 
 .tools {
@@ -37,9 +42,10 @@ h1, h2, h2{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #dcdcdc;
+  background: var(--tool-box-color);
   border-radius: 5px;
   padding: 1rem;
+  min-width: 10rem;
   cursor: pointer;
 }
 
@@ -53,7 +59,25 @@ h1, h2, h2{
   color: var(--bg-color);
 }
 
+@media screen and (max-width: 610px){
+  .converter{
+    margin: 1rem;
+  }
+
+  .tools div{
+    min-width: 7rem;
+  }
+}
+
 /* ------------------------------CONVERTER OPTIONS PAGE STYLES ENDED------------------------------ */
+
+.reducer{
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .container {
   display: flex;

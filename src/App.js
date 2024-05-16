@@ -9,6 +9,12 @@ import WordtoPdf from './components/WordtoPdf';
 import PdfToOdt from './components/PdfToOdt';
 import OdtToPdf from './components/OdtToPdf';
 import PdfToWord from './components/PdfToWord';
+import PngToJpeg from './components/imgPages/PngToJpeg';
+import JpegToPng from './components/imgPages/JpegToPng';
+import PngToWebp from './components/imgPages/PngToWebp';
+import WebpToPng from './components/imgPages/WebpToPng';
+import JpegToWebp from './components/imgPages/JpegToWebp';
+import WebpToJpeg from './components/imgPages/WebpToJpeg';
 
 function App() {
   return (
@@ -21,6 +27,12 @@ function App() {
         <Route path='/pdftoword' element={<PdfToWord />} />
         <Route path='/odttopdf' element={<OdtToPdf />} />
         <Route path='/pdftoodt' element={<PdfToOdt />} />
+        <Route path='/pngtojpeg' element={<PngToJpeg />} />
+        <Route path='/jpegtopng' element={<JpegToPng />} />
+        <Route path='/pngtowebp' element={<PngToWebp />} />
+        <Route path='/webptopng' element={<WebpToPng />} />
+        <Route path='/jpegtowebp' element={<JpegToWebp />} />
+        <Route path='/webptojpeg' element={<WebpToJpeg />} />
       </Routes>
       <Footer />
     </>

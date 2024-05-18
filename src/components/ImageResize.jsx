@@ -87,7 +87,7 @@ const ImageResize = () => {
                             <option value="WEBP">WEBP</option>
                         </select>
                     </div>
-                    <div className='resize-btn'>
+                    <div className='convert-btn'>
                         <span className="material-symbols-outlined">low_density</span>
                         <button type='submit'>{loading}</button>
                     </div>

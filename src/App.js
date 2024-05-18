@@ -1,20 +1,17 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ImageResize from './components/ImageResize';
+
 import Footer from './components/Footer';
-import { Routes, Route } from 'react-router-dom'
-import Homepage from './Homepage';
-import WordtoPdf from './components/WordtoPdf';
-import PdfToOdt from './components/PdfToOdt';
-import OdtToPdf from './components/OdtToPdf';
-import PdfToWord from './components/PdfToWord';
-import PngToJpeg from './components/imgPages/PngToJpeg';
-import JpegToPng from './components/imgPages/JpegToPng';
-import PngToWebp from './components/imgPages/PngToWebp';
-import WebpToPng from './components/imgPages/WebpToPng';
-import JpegToWebp from './components/imgPages/JpegToWebp';
-import WebpToJpeg from './components/imgPages/WebpToJpeg';
+import ImageResize from './components/ImageResize';
+import Homepage from './components/Homepage';
+import PngToJpeg from './components/ImgConverter/PngToJpeg';
+import JpegToPng from './components/ImgConverter/JpegToPng';
+import PngToWebp from './components/ImgConverter/PngToWebp';
+import WebpToPng from './components/ImgConverter/WebpToPng';
+import JpegToWebp from './components/ImgConverter/JpegToWebp';
+import WebpToJpeg from './components/ImgConverter/WebpToJpeg';
 
 function App() {
   return (
@@ -23,10 +20,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/reducer' element={<ImageResize />} />
-        <Route path='/wordtopdf' element={<WordtoPdf />} />
-        <Route path='/pdftoword' element={<PdfToWord />} />
-        <Route path='/odttopdf' element={<OdtToPdf />} />
-        <Route path='/pdftoodt' element={<PdfToOdt />} />
         <Route path='/pngtojpeg' element={<PngToJpeg />} />
         <Route path='/jpegtopng' element={<JpegToPng />} />
         <Route path='/pngtowebp' element={<PngToWebp />} />

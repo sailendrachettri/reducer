@@ -2,7 +2,7 @@ import React from 'react'
 
 const WordtoPdf = () => {
   return (
-    <div>Word to Pdf</div>
+    <div>WordtoPdf</div>
   )
 }
 

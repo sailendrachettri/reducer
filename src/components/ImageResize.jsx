@@ -16,7 +16,7 @@ const ImageResize = () => {
 
     const resizeFile = (file) => {
 
-        setFileName(file.name)
+        setFileName(file.name.split('.')[0])
 
         Resizer.imageFileResizer(
             file,
@@ -59,13 +59,13 @@ const ImageResize = () => {
 
 
     return (
-        <div className='reducer'>
+        <main>
             <div className='container'>
                 <form onSubmit={handleFileResize}>
                     <h3>Compress your image file in seconds</h3>
                     <label htmlFor='upload-file'>
                         <span className="material-symbols-outlined"> add_photo_alternate  </span>
-                        <p> {filename ? filename : "upload your image here"}</p>
+                        <p> {filename ? (filename) : "upload your image here"}</p>
                     </label>
                     <input type="file" id='upload-file'
                         onClick={() => setisUploaded(false)}
@@ -108,7 +108,7 @@ const ImageResize = () => {
                     </div>
                 }
             </div>
-        </div>
+        </main>
     )
 }
 

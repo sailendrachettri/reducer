@@ -12,21 +12,31 @@ body {
   background-color: var(--bg-color);
 }
 
+main {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
 }
 
-h1, h2, h2{
+h1,
+h2,
+h2 {
   color: var(--text-light);
 }
 
 /* --------------------------------CONVERTER OPTIONS PAGE STYLES-------------------------------- */
-.converter{
+.converter {
   margin: 5rem;
   text-align: center;
 }
 
-.converter h1{
+.converter h1 {
   font-size: 2.2rem;
   margin: 2rem 0;
 }
@@ -49,35 +59,27 @@ h1, h2, h2{
   cursor: pointer;
 }
 
-.tools div p{
+.tools div p {
   color: var(--text-dark);
   font-size: 1.1rem;
 }
 
-.tools div span{
+.tools div span {
   font-size: 2.5rem;
   color: var(--bg-color);
 }
 
-@media screen and (max-width: 610px){
-  .converter{
+@media screen and (max-width: 610px) {
+  .converter {
     margin: 1rem;
   }
 
-  .tools div{
+  .tools div {
     min-width: 7rem;
   }
 }
 
 /* ------------------------------CONVERTER OPTIONS PAGE STYLES ENDED------------------------------ */
-
-.reducer{
-  min-height: 90vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .container {
   display: flex;
@@ -167,7 +169,7 @@ label p {
   color: var(--text-light);
 }
 
-.resize-btn {
+.convert-btn {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,5 @@
 import React from 'react'
-import ConvertOptions from './components/ConvertOptions'
+import ConvertOptions from './ConvertOptions'
 
 const Homepage = () => {
   return (

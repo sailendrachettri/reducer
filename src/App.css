@@ -219,9 +219,13 @@ footer {
   opacity: 0.7;
 }
 
-footer a {
+footer .bug-report{
+  padding: 0.5rem 0;
+}
+
+footer .bug-report a{
   color: var(--text-light);
-  font-weight: bold;
+  padding-left: 5px;
 }
 
 .footer-section {

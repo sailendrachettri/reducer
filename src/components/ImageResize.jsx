@@ -7,12 +7,13 @@ import Resizer from 'react-image-file-resizer'
 
 const ImageResize = () => {
     const [newImage, setNewImage] = useState(null);
-    const [upload, setUpload] = useState(null);
+    const [file, setFile] = useState(null);
     const [quality, setQuality] = useState(50);
     const [isUploaded, setisUploaded] = useState(false);
     const [loading, setLoading] = useState("Resize")
     const [imageType, setImageType] = useState("JPEG");
     const [filename, setFileName] = useState(null);
+    const [inputFileName, setInputFileName] = useState(null);
 
     const resizeFile = (file) => {
 
@@ -36,11 +37,11 @@ const ImageResize = () => {
     const handleFileResize = (e) => {
         e.preventDefault();
 
-        if (upload != null) {
+        if (file != null) {
             setLoading("Resizing...")
 
             setisUploaded(false);
-            resizeFile(upload)
+            resizeFile(file)
             setQuality(quality);
             setImageType(imageType);
 
@@ -65,13 +66,15 @@ const ImageResize = () => {
                     <h3>Compress your image file in seconds</h3>
                     <label htmlFor='upload-file'>
                         <span className="material-symbols-outlined"> add_photo_alternate  </span>
-                        <p> {filename ? (filename) : "upload your image here"}</p>
+                        <p> {inputFileName ? inputFileName : "upload your image here"}</p>
                     </label>
                     <input type="file" id='upload-file'
                         onClick={() => setisUploaded(false)}
                         onChange={(event) => {
-                            setUpload(event.target.files[0])
-                            setFileName(event.target.files[0].name)
+                            setFile(event.target.files[0])
+                            let filename = event.target.files[0].name
+                            setFileName(filename.split('.')[0]);
+                            setInputFileName(filename);
                         }
                         }
                     />
